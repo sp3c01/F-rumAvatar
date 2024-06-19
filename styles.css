@@ -1,0 +1,146 @@
+/* Estilos gerais */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e0f7fa;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+header {
+    background-image: url('capa.jpg'); /* Substitua pelo caminho da sua imagem */
+    background-size: cover; /* Ajusta o tamanho da imagem para cobrir todo o header */
+    background-position: center; /* Centraliza a imagem dentro do header */
+    height: 150px; /* Altura da área do header */
+    text-align: center;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #4fc3f7;
+    padding: 10px;
+}
+nav a {
+    margin: 0 15px;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+.content {
+    display: none;
+    padding: 20px;
+}
+.content.active {
+    display: block;
+}
+.media-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.media-item {
+    flex: 1 1 300px; /* Todos os itens terão o mesmo espaço, mas não menor que 300px */
+    box-sizing: border-box;
+    border: 2px solid #0288d1;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: white;
+    margin-bottom: 20px; /* Espaçamento entre os itens */
+    text-align: center;
+}
+.video-container {
+    position: relative;
+    width: 100%;
+    height: 200px; /* Altura fixa para os vídeos */
+}
+.video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px; /* Borda arredondada para vídeos */
+}
+.video-container .video-cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px; /* Borda arredondada para a capa */
+    cursor: pointer;
+}
+.video-container video[controls]::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background: url('play-icon.png') no-repeat center center; /* Ícone de play */
+    background-size: contain;
+}
+
+/* Estilos para Books */
+.book-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #f0f0f0;
+}
+.book-item {
+    cursor: pointer;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.book-content {
+    padding: 20px;
+}
+.book-content > div {
+    display: none;
+}
+.book-content > .active {
+    display: block;
+}
+.image-gallery {
+    text-align: center;
+}
+.image-gallery img {
+    width: 100%;
+    max-width: 1280px;
+    height: auto;
+    max-height: 1920px; /* Resolução máxima das fotos */
+    border: 2px solid #0288d1;
+    border-radius: 8px; /* Borda arredondada para imagens na galeria */
+    margin-bottom: 10px; /* Espaçamento entre as imagens */
+}
+
+/* Ajuste para a descrição dos livros */
+.book-part p {
+    text-align: left; /* Alinha o texto à esquerda */
+    padding-left: 15px; /* Adiciona um padding à esquerda para afastar do início do contêiner */
+}
+
+/* Estilos responsivos */
+@media (max-width: 600px) {
+    .media-item {
+        flex: 1 1 100%; /* Itens de mídia ocupam 100% da largura em telas menores */
+    }
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+    nav a {
+        margin: 5px 0; /* Ajuste de margem para links de navegação em telas menores */
+    }
+}
